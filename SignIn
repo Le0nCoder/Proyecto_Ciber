@@ -1,0 +1,11 @@
+app. secret_key = #Random bytes
+
+@approute('/')
+
+def index():
+    if 'username ' in session:
+        return f'Logged in as {session["username"]}'
+    return 'You are not logged in'
+
+@app.route('/login', methods = ['GET', 'POST'])
+
